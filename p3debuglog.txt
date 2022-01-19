@@ -1,0 +1,71 @@
+ gcc -g p3final.c
+ ./a.out
+enter the number
+2,2
+sum of 2 + 2 is 4
+ gdb ./a.out
+Breakpoint 1, main () at p3final.c:16
+16  {
+(gdb) n
+18    input(&x,&y);
+(gdb) s
+input (a=0x7ffeba83ad5c, b=0x7ffeba83ad60) at p3final.c:4
+4     printf("enter the number\n");
+(gdb) n
+enter the number
+5     scanf("%d,%d",a,b);
+(gdb) n
+2,2
+6   }
+(gdb) n
+main () at p3final.c:19
+19    add(x,y,&z);
+(gdb) p x
+$1 = 2
+(gdb) p y
+$2 = 2
+(gdb) s
+add (a=2, b=2, sum=0x7ffeba83ad64) at p3final.c:9
+9     *sum=a+b;
+(gdb) n
+10  }
+(gdb) n
+main () at p3final.c:20
+20    output(x,y,z);
+(gdb) p z
+$3 = 4
+(gdb) s
+output (a=2, b=2, sum=4) at p3final.c:13
+13    printf("sum of %d + %d is %d\n",a,b,sum);
+(gdb) n
+sum of 2 + 2 is 4
+14  }
+(gdb) n
+main () at p3final.c:21
+21    return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 260) exited normally]
+(gdb) l
+#include <stdio.h>
+void input(int *a,int *b)
+{
+  printf("enter the number\n");
+  scanf("%d,%d",a,b);
+}
+void add(int a,int b,int *sum)
+{
+  *sum=a+b;
+}
+void output(int a,int b,int sum)
+{
+  printf("sum of %d + %d is %d\n",a,b,sum);
+}
+int main()
+{
+  int x,y,z;
+  input(&x,&y);
+  add(x,y,&z);
+  output(x,y,z);
+  return 0;
+}
