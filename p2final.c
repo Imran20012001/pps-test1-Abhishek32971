@@ -2,7 +2,7 @@
 int input()
 {
   int a;
-  printf("enter the number to be added");
+  printf("enter the number to be added:");
   scanf("%d",&a);
   return a;
 }
@@ -14,13 +14,14 @@ int add(int a,int b)
 }
 void output(int a,int b,int c)
 {
-  printf("sum of %d+%d=%d",a,b,c);
+  printf("sum of %d+%d=%d\n",a,b,c);
 }
-void main()
+int main()
 {
   int a,b,z;
   a=input();
   b=input();
   z=add(a,b);
   output(a,b,z);
+  return 0;
 }

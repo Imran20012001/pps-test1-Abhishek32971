@@ -22,10 +22,11 @@ void output(int sum)
 {
   printf("the sum of all the digits entered is:%d\n",sum);
 }
-void main()
+int main()
 {
   int a,s;
   a=input();
   s=sum(a);
   output(s);
+  return 0;
 }

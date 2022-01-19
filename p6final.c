@@ -27,10 +27,11 @@ void output(int a,int s)
   printf("%d is =%d",i,s);
 }
 
-void main()
+int main()
 {
   int b,sm;
   b=input_n();
   sm=sum(b);
   output(b,sm);
+  return 0;
 }

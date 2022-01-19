@@ -25,9 +25,9 @@ int cmp(int a,int b,int c)
 }
 void output(int g)
 {
-  printf("the greatest number among the three is:%d",g);
+  printf("the greatest number among the three is:%d\n",g);
 }
-void main()
+int main()
 {
   int a,b,c,ga;
   a=input();
@@ -35,4 +35,5 @@ void main()
   c=input();
   ga=cmp(a,b,c);
   output(ga);
+  return 0;
 }

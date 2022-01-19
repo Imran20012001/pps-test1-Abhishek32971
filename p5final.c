@@ -21,12 +21,13 @@ int cmp(int a,int b,int c,int *g)
 }
 void output(int g)
 {
-  printf("the greatest number among the three is:%d",g);
+  printf("the greatest number among the three is:%d\n",g);
 }
-void main()
+int main()
 {
   int a,b,c,ga;
   input(&a,&b,&c);
   cmp(a,b,c,&ga);
   output(ga);
+  return 0;
 }

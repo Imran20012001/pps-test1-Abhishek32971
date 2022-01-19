@@ -20,12 +20,13 @@ float squareRoot(float n)
 } 
 void output(float a)
 {
-    printf("the square is: %f",a);
+    printf("the square is: %f\n",a);
 }
-void main()
+int main()
 {
     float a,b;
     a=input();
     b=squareRoot(a);
     output(b);
+    return 0;
 }
