@@ -1,8 +1,8 @@
- #include<stdio.h>
+ #include <stdio.h>
   void input_two_string(char *a,char *b)
    { 
      printf("enter the words\n");
-     scanf("%s,%s",a,b);
+     scanf("%s %s",a,b);
    }
    int strcmp(char *a,char *b)
    {
@@ -18,11 +18,11 @@
    void output(char *a,char *b,int result)
    {
      if(result>0)
-      printf("%s is greater than %s",a,b);
+      printf("%s is greater than %s\n",a,b);
      else if(result==0)
-      printf("%s is equal to %s",a,b);
+      printf("%s is equal to %s\n",a,b);
      else
-      printf("%s is greater than %s",b,a);
+      printf("%s is greater than %s\n",b,a);
    } 
    int main()
    {
