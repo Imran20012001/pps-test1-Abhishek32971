@@ -72,10 +72,30 @@ main () at p1final.c:26
 Continuing.
 [Inferior 1 (process 31) exited normally]
 (gdb) l
-21    int a,b,z;
-22    a=input();
-23    b=input();
-24    z=add(a,b);
-25    output(a,b,z);
-26    return 0;
-27  }(gdb) 
+#include<stdio.h>
+int input()
+{
+  int a;
+  printf("enter the number to be added:");
+  scanf("%d",&a);
+  return a;
+}
+int add(int a,int b)
+{
+  int sum;
+  sum=a+b;
+  return sum;
+}
+void output(int a,int b,int c)
+{
+  printf("sum of %d+%d=%d\n",a,b,c);
+}
+int main()
+{
+  int a,b,z;
+  a=input();
+  b=input();
+  z=add(a,b);
+  output(a,b,z);
+  return 0;
+}

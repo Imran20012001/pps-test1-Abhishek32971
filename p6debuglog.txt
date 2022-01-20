@@ -1,0 +1,148 @@
+gcc -g p6final.c
+ ./a.out
+enter the number 
+4
+0+1+2+3+4 is =10 gdb ./a.out
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x850: file p6final.c, line 33.
+(gdb) r
+Starting program: /home/runner/pps-test1-Abhishek32971/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6final.c:33
+33    b=input_n();
+(gdb) s
+input_n () at p6final.c:3
+3   {
+(gdb) n
+5     printf("enter the number \n");
+(gdb) n
+enter the number 
+6     scanf("%d",&a);
+(gdb) n
+4
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p6final.c:34
+34    sm=sum(b);
+(gdb) p b
+$1 = 4
+(gdb) s
+sum (a=4) at p6final.c:11
+11    int s=0,i;
+(gdb) n
+12    i=1;
+(gdb) n
+13    while(i<=a)
+(gdb) n
+15      s=s+i;
+(gdb) n
+16      i++;
+(gdb) p s
+$2 = 1
+(gdb) n
+13    while(i<=a)
+(gdb) n
+15      s=s+i;
+(gdb) n
+16      i++;
+(gdb) p s
+$3 = 3
+(gdb) n
+13    while(i<=a)
+(gdb) n
+15      s=s+i;
+(gdb) n
+16      i++;
+(gdb) p s
+$4 = 6
+(gdb) n
+13    while(i<=a)
+(gdb) n
+15      s=s+i;
+(gdb) n
+16      i++;
+(gdb) p s
+$5 = 10
+(gdb) n
+13    while(i<=a)
+(gdb) n
+18    return s;
+(gdb) n
+19  }
+(gdb) n
+main () at p6final.c:35
+35    output(b,sm);
+(gdb) p sm
+$6 = 10
+(gdb) s
+output (a=4, s=10) at p6final.c:22
+22    int i=0,j=0;
+(gdb) n
+23    for (i;i<a;i++)
+(gdb) n
+25      printf("%d+",i);
+(gdb) n
+23    for (i;i<a;i++)
+(gdb) n
+25      printf("%d+",i);
+(gdb) n
+23    for (i;i<a;i++)
+(gdb) n
+25      printf("%d+",i);
+(gdb) n
+23    for (i;i<a;i++)
+(gdb) n
+25      printf("%d+",i);
+(gdb) n
+23    for (i;i<a;i++)
+(gdb) n
+27    printf("%d is =%d",i,s);
+(gdb) n
+28  }
+(gdb) n
+main () at p6final.c:36
+36    return 0;
+(gdb) c
+Continuing.
+0+1+2+3+4 is =10[Inferior 1 (process 119) exited normally]
+(gdb) l 1,37
+1   #include <stdio.h>
+2   int input_n()
+3   {
+4     int a;
+5     printf("enter the number \n");
+6     scanf("%d",&a);
+7     return a;
+8   }
+9   int sum(int a)
+10  {
+11    int s=0,i;
+12    i=1;
+13    while(i<=a)
+14    {
+15      s=s+i;
+16      i++;
+17    }
+18    return s;
+19  }
+20  void output(int a,int s)
+21  {
+22    int i=0,j=0;
+23    for (i;i<a;i++)
+24    {
+25      printf("%d+",i);
+26    }
+27    printf("%d is =%d",i,s);
+28  }
+29
+30  int main()
+31  {
+32    int b,sm;
+33    b=input_n();
+34    sm=sum(b);
+35    output(b,sm);
+36    return 0;
