@@ -1,0 +1,140 @@
+gcc -g p8final.c
+ ./a.out
+enter the number to find its root:
+9
+the square is: 3.000000
+ gdb ./a.out
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x85a: file p8final.c, line 28.
+(gdb) r
+Starting program: /home/runner/pps-test1-Abhishek32971/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p8final.c:28
+28      a=input();
+(gdb) s
+input () at p8final.c:3
+3   {
+(gdb) n
+5       printf("enter the number to find its root:\n");
+(gdb) n
+enter the number to find its root:
+6       scanf("%f",&n);
+(gdb) n
+9
+7       return n;
+(gdb) n
+8   }
+(gdb) p n
+$1 = 9
+(gdb) n
+main () at p8final.c:29
+29      b=squareRoot(a);
+(gdb) p a
+$2 = 9
+(gdb) s
+squareRoot (n=9) at p8final.c:11
+11      float a=n; 
+(gdb) n
+12      float b=0; 
+(gdb) n
+13      float q=0.00001; 
+(gdb) n
+14      while (a-b>q)
+(gdb) n
+16          a=(a+b)/2; 
+(gdb) n
+17          b=n/a; 
+(gdb) p a
+$3 = 4.5
+(gdb) p b
+$4 = 0
+(gdb) n
+14      while (a-b>q)
+(gdb) n
+16          a=(a+b)/2; 
+(gdb) n
+17          b=n/a; 
+(gdb) p a
+$5 = 3.25
+(gdb) p b
+$6 = 2
+(gdb) n
+14      while (a-b>q)
+(gdb) n
+16          a=(a+b)/2; 
+(gdb) n
+17          b=n/a; 
+(gdb) p a
+$7 = 3.00961542
+(gdb) p b
+$8 = 2.76923084
+(gdb) n
+14      while (a-b>q)
+(gdb) n
+16          a=(a+b)/2; 
+(gdb) n
+17          b=n/a; 
+(gdb) n
+14      while (a-b>q)
+(gdb) n
+16          a=(a+b)/2; 
+(gdb) n
+17          b=n/a; 
+(gdb) n
+14      while (a-b>q)
+(gdb) n
+19      return a; 
+(gdb) n
+20  } 
+(gdb) n
+main () at p8final.c:30
+30      output(b);
+(gdb) p b
+$9 = 3
+(gdb) s
+output (a=3) at p8final.c:23
+23      printf("the square is: %f\n",a);
+(gdb) n
+the square is: 3.000000
+24  }
+(gdb) n
+main () at p8final.c:31
+31      return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 368) exited normally]
+(gdb) l 1,32
+1   #include<stdio.h>
+2   float input()
+3   {
+4       float n;
+5       printf("enter the number to find its root:\n");
+6       scanf("%f",&n);
+7       return n;
+8   }
+9   float squareRoot(float n) 
+10  { 
+11      float a=n; 
+12      float b=0; 
+13      float q=0.00001; 
+14      while (a-b>q)
+15      { 
+16          a=(a+b)/2; 
+17          b=n/a; 
+18      } 
+19      return a; 
+20  } 
+21  void output(float a)
+22  {
+23      printf("the square is: %f\n",a);
+24  }
+25  int main()
+26  {
+27      float a,b;
+28      a=input();
+29      b=squareRoot(a);
+30      output(b);
+31      return 0;
+32  }(gdb) 
