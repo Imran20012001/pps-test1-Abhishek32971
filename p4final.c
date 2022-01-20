@@ -9,15 +9,15 @@ int input()
 int cmp(int a,int b,int c)
 {
   int g;
-  if (a>=b && a>=c)
+  if (a>b && a>c)
   {
     g=a;
   }
-  else  if (b>=c)
+  else  if (b>c)
   {
     g=b;
   }
-  else if (c>=a)
+  else 
   {
     g=c;
   }
