@@ -6,59 +6,52 @@ the greatest number among the three is:3
  gdb ./a.out
 Reading symbols from ./a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x82c: file p5final.c, line 27.
+Note: breakpoint 1 also set at pc 0x55810620082c.
+Breakpoint 2 at 0x55810620082c: file p5final.c, line 27.
+(gdb) n
+The program is not being run.
 (gdb) r
 Starting program: /home/runner/pps-test1-Abhishek32971/a.out 
-warning: Error disabling address space randomization: Operation not permitted
-
 Breakpoint 1, main () at p5final.c:27
 27  {
 (gdb) n
 29    input(&a,&b,&c);
 (gdb) s
-input (a=0x7ffe5c2ef198, b=0x7ffe5c2ef19c, c=0x7ffe5c2ef1a0) at p5final.c:4
+input (a=0x7ffd8a14c8e8, b=0x7ffd8a14c8ec, c=0x7ffd8a14c8f0) at p5final.c:4
 4     printf("enter numbers in the format a,b,c\n");
 (gdb) n
 enter numbers in the format a,b,c
 5     scanf("%d,%d,%d",a,b,c);
 (gdb) n
-1,2,3
+2,2,1
 6   }
 (gdb) n
 main () at p5final.c:30
 30    cmp(a,b,c,&ga);
-(gdb) p a
-$1 = 1
-(gdb) p b
-$2 = 2
-(gdb) p c
-$3 = 3
 (gdb) s
-cmp (a=1, b=2, c=3, g=0x7ffe5c2ef1a4) at p5final.c:9
-9     if (a>b && a>c)
+cmp (a=2, b=2, c=1, g=0x7ffd8a14c8f4) at p5final.c:9
+9     if (a>=b && a>=c)
 (gdb) n
-13    else  if (b>a && b>c)
-(gdb) n
-19      *g=c;
+11      *g=a;
 (gdb) n
 21  }
 (gdb) n
 main () at p5final.c:31
 31    output(ga);
 (gdb) p ga
-$4 = 3
+$1 = 2
 (gdb) s
-output (g=3) at p5final.c:24
+output (g=2) at p5final.c:24
 24    printf("the greatest number among the three is:%d\n",g);
 (gdb) n
-the greatest number among the three is:3
+the greatest number among the three is:2
 25  }
 (gdb) n
 main () at p5final.c:32
 32    return 0;
 (gdb) c
 Continuing.
-[Inferior 1 (process 36) exited normally]
+[Inferior 1 (process 415) exited normally]
 (gdb) l 1,33
 1   #include <stdio.h>
 2   int input(int *a,int *b,int *c)
@@ -68,15 +61,15 @@ Continuing.
 6   }
 7   int cmp(int a,int b,int c,int *g)
 8   {
-9     if (a>b && a>c)
+9     if (a>=b && a>=c)
 10    {
 11      *g=a;
 12    }
-13    else  if (b>a && b>c)
+13    else  if (b>=c)
 14    {
 15      *g=b;
 16    }
-17    else 
+17    else if(c>=a)
 18    {
 19      *g=c;
 20    }
@@ -92,4 +85,3 @@ Continuing.
 30    cmp(a,b,c,&ga);
 31    output(ga);
 32    return 0;
-33  }(gdb) 
