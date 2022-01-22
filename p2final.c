@@ -6,10 +6,10 @@ int input()
   scanf("%d",&a);
   return a;
 }
-int add(int a,int b)
+int add(int t,int u)
 {
   int sum;
-  sum=a+b;
+  sum=t+u;
   return sum;
 }
 void output(int a,int b,int c)
@@ -18,10 +18,10 @@ void output(int a,int b,int c)
 }
 int main()
 {
-  int a,b,z;
-  a=input();
-  b=input();
-  z=add(a,b);
-  output(a,b,z);
+  int x,y,z;
+  x=input();
+  y=input();
+  z=add(x,y);
+  output(x,y,z);
   return 0;
 }
