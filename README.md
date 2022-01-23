@@ -51,7 +51,7 @@ entered by the user
 	<br> float my_sqrt(float n);
 	<br> void output(float n, float sqrt_result);
 	
-<br> 9.	Write a program to Compare two strings
+<br> 9.	Write a program to Compare two s oftrings
 	<br> void input_two_string(char *a, char *b);
 	<br> int strcmp(char *a, char *b);
 	<br> void output(char *a, char *b, int result);
