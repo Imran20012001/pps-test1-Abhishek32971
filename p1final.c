@@ -18,10 +18,10 @@ void output(int a,int b,int c)
 }
 int main()
 {
-  int a,b,z;
+  int a,b,q;
   a=input();
   b=input();
-  z=add(a,b);
-  output(a,b,z);
+  q=add(a,b);
+  output(a,b,q);
   return 0;
 }
