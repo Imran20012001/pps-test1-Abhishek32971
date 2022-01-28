@@ -1,1 +1,75 @@
+gdb a.out
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x843: file p10final.c, line 27.
+(gdb) r
+Starting program: /home/runner/pps-test1-Abhishek32971/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p10final.c:27
+27    a=input_chellox();
+(gdb) s
+input_chellox () at p10final.c:7
+7   {
+(gdb) n
+9     printf("enter the real and imag\n");
+(gdb) n
+enter the real and imag
+10    scanf("%d %d",&k.real,&k.imaginary);
+(gdb) n
+2
+2
+11    return k;
+(gdb) n
+12  }
+(gdb) n
+main () at p10final.c:28
+28    b=input_chellox();
+(gdb) p a
+$1 = {real = 2, imaginary = 2}
+(gdb) s
+input_chellox () at p10final.c:7
+7   {
+(gdb) n
+9     printf("enter the real and imag\n");
+(gdb) n
+enter the real and imag
+10    scanf("%d %d",&k.real,&k.imaginary);
+(gdb) n
+2
+2
+11    return k;
+(gdb) n
+12  }
+(gdb) n
+main () at p10final.c:29
+29    c=add(a,b);
+(gdb) p b
+$2 = {real = 2, imaginary = 2}
+(gdb) s
+add (a=..., b=...) at p10final.c:16
+16      z.real=a.real+b.real;
+(gdb) n
+17      z.imaginary=a.imaginary+b.imaginary;
+(gdb) n
+18      return z;
+(gdb) p z
+$3 = {real = 4, imaginary = 4}
+(gdb) n
+19  }
+(gdb) n
+main () at p10final.c:30
+30    output(a,b,c);
+(gdb) s
+output (a=..., b=..., c=...) at p10final.c:22
+22    printf("%d + %di + %d + %di is %d + %di\n",a.real,a.imaginary,b.real,b.imaginary,c.real,c.imaginary);
+(gdb) n
+2 + 2i + 2 + 2i is 4 + 4i
+23  }
+(gdb) n
+main () at p10final.c:31
+31    return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 113) exited normally]
+(gdb) q

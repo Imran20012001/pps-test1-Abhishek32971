@@ -19,9 +19,9 @@ int cmp(int a,int b,int c,int *g)
     *g=c;
   }
 }
-void output(int g)
+void output(int e)
 {
-  printf("the greatest number among the three is:%d\n",g);
+  printf("the greatest number among the three is:%d\n",e);
 }
 int main()
 {

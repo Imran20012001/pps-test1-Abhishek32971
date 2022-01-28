@@ -26,4 +26,4 @@
      output(a,b,strcmp(a,b));
      return 0;
    }
-/*return the difference of a[i] and b[i]*/
+/*return the difference of a[i] and b[i]*/XD

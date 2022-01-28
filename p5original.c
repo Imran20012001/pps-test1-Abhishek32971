@@ -6,7 +6,7 @@ void input(int *a,int *b,int *c)
 }
 void cmp(int a,int b,int c)
 {
-  (a<b&&c<a)?printf("c<a<b"):(((a>b)&&(c>a))?printf("c>a>b"):((b>c&&c>a)?printf("b>c>a"):((b<c&&c<a)?printf("b<c<a"):((a>b&&b>c)?printf("a>b>c"):printf("a<b<c")))));
+  (a<b&&c<a)?printf("c<a<b"):(((a>b)&&(c>a))?printf("c>a>b"):((b>c&&c>a)?printf("b>c>a"):((b<c&&c<a)?printf("b<c<a"):((a>b&&b>c)?printf("a>b>c"):printf("a<b<c")))));//st1?st2:st3
 }
 void main()
 {
