@@ -20,7 +20,7 @@ int sum(int a,int ar[a])
   int sum=0;
   for (int i=0;i<a;i++)
   {
-    sum=sum+ar[i];  
+    sum=sum+ar[i]; 
   }
   return sum;
 }
@@ -43,4 +43,3 @@ int main()
   output(a,b,s);
   return 0;
 }
-/*make a separate function to input the array and a separate one to add i*/
