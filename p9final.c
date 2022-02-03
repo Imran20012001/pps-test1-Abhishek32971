@@ -9,8 +9,6 @@ int strcmp(char *a, char *b)
   int c=0;
   while(*a==*b)
   {
-    if(*a!=*b)
-    break;
     a++;
     b++; 
   }
